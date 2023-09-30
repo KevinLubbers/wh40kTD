@@ -18,6 +18,13 @@
 
 <canvas id="main_stage"></canvas>
 
+<div id="uiContainer">
+	<button type="button" name="back" class="ui" id="back">Back</button>
+	<button type="button" name="next" class="ui" id="next">Next</button>
+	<button type="button" name="restart" class="ui" id="restart">Restart</button>
+</div>
+
+
 </body>
 
 
