@@ -27,8 +27,8 @@ function draw(){
 	context.clearRect(0,0, canvas.width, canvas.height);
 
 
-	context.drawImage(background, adjustedBackgroundPosition, 0, canvas.width, canvas.height);
-	context.drawImage(background, adjustedBackgroundPosition - background.width, 0, canvas.width, canvas.height);
+	context.drawImage(background, 0, 0, canvas.width, canvas.height);
+	context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 
 		if(movement.up){
