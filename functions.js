@@ -26,6 +26,7 @@ const movement = {
 function draw(){
 	context.clearRect(0,0, canvas.width, canvas.height);
 
+
 	context.drawImage(background, adjustedBackgroundPosition, 0, canvas.width, canvas.height);
 	context.drawImage(background, adjustedBackgroundPosition - background.width, 0, canvas.width, canvas.height);
 
@@ -48,6 +49,10 @@ function draw(){
 		if(movement.right){
 			if(characterX <= (canvas.width - characterWidth)){
 				characterX += 1;
+			}
+			else{
+				characterX = 0;
+				backgroundScroll += 1;
 			}
 		}
 	
@@ -95,8 +100,5 @@ document.addEventListener("keyup", (event) => {
 
 });
 
-window.addEventListener("scroll", function(){
-	backgroundScroll = window.scrollX;
-});
 
 draw();
