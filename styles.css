@@ -12,3 +12,15 @@
 	display:flex;
 	justify-content:center;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) {
+
+#main_stage {
+
+	border:1px solid black;
+	width:90vw;
+	height:50vh;
+	margin:auto;
+	display:flex;
+
+}
+}
