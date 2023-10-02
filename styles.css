@@ -15,11 +15,13 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) {
 
 body {
+	overflow: hidden;
 	overflow-y: hidden
 }
 
 #main_stage {
 
+	-webkit-overflow-scrolling: touch;
 	border:1px solid black;
 	width:90vw;
 	height:50vh;
