@@ -18,11 +18,29 @@
 
 <canvas id="main_stage"></canvas>
 
-<div id="uiContainer">
-	<button type="button" name="back" class="ui" id="back">Back</button>
-	<button type="button" name="next" class="ui" id="next">Next</button>
-	<button type="button" name="restart" class="ui" id="restart">Restart</button>
-</div>
+<input type="range" id="colorSlider" min="0" max="1000" style="float:right;margin-top:10px;" />
+
+    <div id="directionalPad" style="display:flex;flex-direction:column;">
+        <div style="margin-left:83.5px;margin-top:10px;">
+            <img src="imgs/ui/upArrow.jpg" id="up" class="ui" ontouchstart="touchMovement('up')" ontouchend="stopMovement('up')"/>
+        </div>
+        <div style="margin-left:15px;">
+            <img src="imgs/ui/leftArrow.jpg" id="left" ontouchstart="touchMovement('left')" class="ui" ontouchend="stopMovement('left')" />
+            <img src="imgs/ui/center.jpg" class="ui" />
+            <img src="imgs/ui/rightArrow.jpg" id="right" ontouchstart="touchMovement('right')" class="ui" ontouchend="stopMovement('right')"/>
+        </div>
+        <div style="margin-left:83.5px">
+            <img src="imgs/ui/downArrow.jpg" id="down" ontouchstart="touchMovement('down')" class="ui" ontouchend="stopMovement('down')" />
+        </div>
+    </div>
+    <div id="buttons" >
+        <div style="margin-left:70vw;">
+            <img style="border-radius:50px;" height="100px" width="100px" src="imgs/ui/buttonA.jpg" id="a" ontouchstart="touchMovement('a')" ontouchend="stopMovement('a')" />
+        </div>
+        <div style="margin-left:45vw;">
+            <img style="border-radius:50px;" height="100px" width="100px" src="imgs/ui/buttonB.jpg" id="b" ontouchstart="touchMovement('b')" ontouchend="stopMovement('b')" />
+        </div>
+    </div>
 
 
 </body>
