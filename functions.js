@@ -182,5 +182,8 @@ function stopMovement(direction){
 		}
 }
 
+document.body.addEventListener('touchend', function(event) {
+      event.preventDefault();
+    });
 
 draw();
