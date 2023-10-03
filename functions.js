@@ -181,9 +181,12 @@ function stopMovement(direction){
 			button.b = false;
 		}
 }
-
+document.body.addEventListener('touchstart', function(event) {
+      event.preventDefault();
+    }, {passive:false});
 document.body.addEventListener('touchend', function(event) {
       event.preventDefault();
     });
+
 
 draw();
