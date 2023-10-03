@@ -65,14 +65,6 @@ function draw(){
 	requestAnimationFrame(draw);
 }
 
-const slider = document.getElementById('colorSlider');
-    
-slider.addEventListener('input', function() {
-    const sliderValue = this.value;
-      const hue = Math.floor((sliderValue / 360) * 360);
-      const color = `hsl(${hue}, 100%, 50%)`;
-      document.body.style.backgroundColor = color;
-});
 
 document.addEventListener("keydown", (event) => {
 	const key = event.key;
@@ -181,12 +173,36 @@ function stopMovement(direction){
 			button.b = false;
 		}
 }
-document.body.addEventListener('touchstart', function(event) {
-      event.preventDefault();
-    }, {passive:false});
-document.body.addEventListener('touchend', function(event) {
-      event.preventDefault();
-    });
 
+const slider = document.getElementById('colorSlider');
+const directional = document.getElementById('directionalPad');
+const buttons = document.getElementById('buttons')
+    
+slider.addEventListener('input', function() {
+    const sliderValue = this.value;
+      const hue = Math.floor((sliderValue / 360) * 360);
+      const color = `hsl(${hue}, 100%, 50%)`;
+      document.body.style.backgroundColor = color;
+});
+buttons.addEventListener('touchstart', function(event) {
+      event.preventDefault();
+
+
+    }, {passive:false});
+buttons.addEventListener('touchend', function(event) {
+      event.preventDefault();
+
+
+    });
+directional.addEventListener('touchstart', function(event) {
+      event.preventDefault();
+
+
+    }, {passive:false});
+directional.addEventListener('touchend', function(event) {
+      event.preventDefault();
+
+
+    });
 
 draw();
