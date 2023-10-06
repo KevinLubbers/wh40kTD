@@ -5,14 +5,15 @@ const context = canvas.getContext("2d");
 
 const background = new Image();
 background.src = "imgs/bgs/gamebackground-city.png";
+var backgroundX = 0;
+var backgroundY = 0;
 
 const character = new Image();
 character.src = "imgs/chars/investigatorFemale.png";
-var characterX = 100;
-var characterY = 100;
+var characterX = canvas.width / 2;
+var characterY = canvas.height / 2;
 let characterWidth = 10;
 let characterHeight = 10;
-let backgroundScroll = 0;
 
 context.imageSmoothingEnabled = true;
 
@@ -31,32 +32,36 @@ function draw(){
 	context.clearRect(0,0, canvas.width, canvas.height);
 
 
-	context.drawImage(background, 0, 0, canvas.width, canvas.height);
-	context.drawImage(background, 0, 0, canvas.width, canvas.height);
+	context.drawImage(background, backgroundX, backgroundY, background.width, background.height);
 
-
-		if(movement.up){
-			if(characterY >= 0){
-				characterY -= 1;
-			}
-		}
 		if(movement.down){
-			if(characterY <= (canvas.height - characterHeight)){
-				characterY += 1;
+			if(backgroundY > ((-1 * background.height) + (characterY + characterHeight))){
+
+				console.log(background.height);
+				backgroundY -= 1;
+				console.log(backgroundX);
+				console.log(backgroundY);
 			}
 		}
-		if(movement.left){
-			if(characterX >= 0){
-				characterX -= 1;
+		if(movement.up){
+			if(backgroundY < (0 + characterY)){
+				backgroundY += 1;
+				console.log(backgroundX);
+				console.log(backgroundY);
 			}
 		}
 		if(movement.right){
-			if(characterX <= (canvas.width - characterWidth)){
-				characterX += 1;
+			if(backgroundX > ((-1 * background.width) + (characterX + characterWidth))){
+				backgroundX -= 1;
+				console.log(backgroundX);
+				console.log(backgroundY);
 			}
-			else{
-				characterX = 0;
-				backgroundScroll += 1;
+		}
+		if(movement.left){
+			if(backgroundX < (0 + characterX)){
+				backgroundX += 1;
+				console.log(backgroundX);
+				console.log(backgroundY);
 			}
 		}
 	
@@ -186,23 +191,15 @@ slider.addEventListener('input', function() {
 });
 buttons.addEventListener('touchstart', function(event) {
       event.preventDefault();
-
-
     }, {passive:false});
 buttons.addEventListener('touchend', function(event) {
       event.preventDefault();
-
-
     });
 directional.addEventListener('touchstart', function(event) {
       event.preventDefault();
-
-
     }, {passive:false});
 directional.addEventListener('touchend', function(event) {
       event.preventDefault();
-
-
     });
 
 draw();

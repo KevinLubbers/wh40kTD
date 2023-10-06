@@ -12,6 +12,11 @@
 	height:65px;
 	width:65px;
 }
+.mobileHide{
+	visibility: hidden;
+}
+#buttons{
+}
 
 .selected{
 	border:4px solid yellow;
@@ -26,6 +31,9 @@ body {
 	
 }
 
+.mobileHide{
+	visibility: visible;
+}
 #main_stage {
 
 	-webkit-overflow-scrolling: touch;

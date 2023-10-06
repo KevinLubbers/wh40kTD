@@ -18,9 +18,17 @@
 
 <canvas id="main_stage"></canvas>
 
-<input type="range" id="colorSlider" min="0" max="1000" style="float:right;margin-top:10px;" />
+<input type="range" id="colorSlider" min="0" max="1000" style="margin-top:10px;" />
 
-    <div id="directionalPad" style="display:flex;flex-direction:column;">
+    <div id="buttons" class="mobileHide" style="display:flex;flex-direction:column;">
+        <div style="margin-left:70vw;">
+            <img style="border-radius:50px;" height="100px" width="100px" src="imgs/ui/buttonA.jpg" id="a" ontouchstart="touchMovement('a')" ontouchend="stopMovement('a')" />
+        </div>
+        <div style="margin-left:45vw;">
+            <img style="border-radius:50px;" height="100px" width="100px" src="imgs/ui/buttonB.jpg" id="b" ontouchstart="touchMovement('b')" ontouchend="stopMovement('b')" />
+        </div>
+    </div>
+    <div id="directionalPad" class="mobileHide" style="display:flex;flex-direction:column;float:left;">
         <div style="margin-left:83.5px;margin-top:10px;">
             <img src="imgs/ui/upArrow.jpg" id="up" class="ui" ontouchstart="touchMovement('up')" ontouchend="stopMovement('up')"/>
         </div>
@@ -31,14 +39,6 @@
         </div>
         <div style="margin-left:83.5px">
             <img src="imgs/ui/downArrow.jpg" id="down" ontouchstart="touchMovement('down')" class="ui" ontouchend="stopMovement('down')" />
-        </div>
-    </div>
-    <div id="buttons" >
-        <div style="margin-left:70vw;">
-            <img style="border-radius:50px;" height="100px" width="100px" src="imgs/ui/buttonA.jpg" id="a" ontouchstart="touchMovement('a')" ontouchend="stopMovement('a')" />
-        </div>
-        <div style="margin-left:45vw;">
-            <img style="border-radius:50px;" height="100px" width="100px" src="imgs/ui/buttonB.jpg" id="b" ontouchstart="touchMovement('b')" ontouchend="stopMovement('b')" />
         </div>
     </div>
 
